@@ -1,0 +1,17 @@
+// middleware.ts  (at project root, next to next.config.js)
+import createMiddleware from 'next-intl/middleware';
+
+export default createMiddleware({
+  // عدّل اللغات حسب مشروعك
+  locales: ['en', 'ar'],
+  defaultLocale: 'en',
+  localePrefix: 'as-needed'
+});
+
+// خلّي الماتشر يغطي الجذر وكل المسارات مع استثناء الملفات الساكنة
+export const config = {
+  matcher: [
+    '/',
+    '/(en|ar)/:path*'
+  ]
+};
