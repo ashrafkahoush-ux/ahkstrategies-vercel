@@ -1,0 +1,8 @@
+{
+  "name": "ahkstrategies-deploy-wrapper",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "unzip -o ahkstrategies.zip && cd ahkstrategies && npm install --legacy-peer-deps && npm run build",
+    "start": "cd ahkstrategies && npm start"
+  }
+}
