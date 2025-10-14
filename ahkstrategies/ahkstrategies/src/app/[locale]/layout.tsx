@@ -1,29 +1,17 @@
-import { ReactNode } from 'react';
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
-import Navbar from '../../components/Navbar';
-import Footer from '../../components/Footer';
+import {NextIntlClientProvider} from 'next-intl';
+import en from '@/messages/en.json';
+import ar from '@/messages/ar.json';
+import {ReactNode} from 'react';
 
-export default async function LocaleLayout({
-  children,
-  params
-}: {
-  children: ReactNode;
-  params: { locale: string };
-}) {
-  // Validate locale
-  const { locale } = params;
-  if (!['en', 'ar'].includes(locale)) {
-    notFound();
-  }
-  const messages = (await import(`../../messages/${locale}.json`)).default;
+export default function RootLayout({
+  children, params: {locale}
+}: {children: ReactNode; params: {locale: 'en'|'ar'}}) {
+  const messages = locale === 'ar' ? ar : en;
   return (
-    <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen bg-white text-gray-900">
+    <html lang={locale}>
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>
