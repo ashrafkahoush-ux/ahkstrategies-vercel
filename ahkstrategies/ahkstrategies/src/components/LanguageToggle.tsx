@@ -1,24 +1,24 @@
 "use client";
-
-import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 interface LanguageToggleProps {
-  /**
-   * The path without the locale prefix, starting with a slash. For example `/about` or `/contact`.
-   */
   currentPath: string;
 }
 
 export default function LanguageToggle({ currentPath }: LanguageToggleProps) {
   const locale = useLocale();
-  const otherLocale = locale === 'en' ? 'ar' : 'en';
+  const otherLocale = locale === "en" ? "ar" : "en";
+
   return (
     <Link
       href={`/${otherLocale}${currentPath}`}
-      className="px-2 py-1 border border-white rounded text-sm hover:bg-white hover:text-primary transition"
+      className="inline-block px-2 py-1 border border-white rounded text-sm hover:bg-white hover:text-black transition"
+      legacyBehavior
     >
-      {otherLocale.toUpperCase()}
+      <a className="inline-block px-2 py-1 border border-white rounded text-sm hover:bg-white hover:text-black transition">
+        {otherLocale === "en" ? "English" : "العربية"}
+      </a>
     </Link>
   );
 }
