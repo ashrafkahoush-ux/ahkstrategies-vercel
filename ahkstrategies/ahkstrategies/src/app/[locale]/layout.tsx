@@ -1,18 +1,17 @@
-import {NextIntlClientProvider} from 'next-intl';
-import en from '@/messages/en.json';
-import ar from '@/messages/ar.json';
+import {getMessages} from 'next-intl/server';
 import {ReactNode} from 'react';
+import ClientProvider from '../../components/ClientProvider';
 
-export default function RootLayout({
+export default async function RootLayout({
   children, params: {locale}
 }: {children: ReactNode; params: {locale: 'en'|'ar'}}) {
-  const messages = locale === 'ar' ? ar : en;
+  const messages = await getMessages();
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <ClientProvider locale={locale} messages={messages}>
           {children}
-        </NextIntlClientProvider>
+        </ClientProvider>
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import SafeLink from './SafeLink';
 
 export default function HeroSection() {
   const t = useTranslations('Hero');
@@ -14,18 +14,18 @@ export default function HeroSection() {
           {t('subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link
+          <SafeLink
             href={`/${locale}/contact#lead-form`}
             className="bg-primary text-white px-6 py-3 rounded hover:bg-primary-dark transition"
           >
             {t('ctaLead')}
-          </Link>
-          <Link
+          </SafeLink>
+          <SafeLink
             href={`/${locale}/contact#partner-form`}
             className="bg-accent text-white px-6 py-3 rounded hover:bg-accent-dark transition"
           >
             {t('ctaPartner')}
-          </Link>
+          </SafeLink>
         </div>
       </div>
     </section>

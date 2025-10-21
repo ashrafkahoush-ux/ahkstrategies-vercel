@@ -1,1 +1,60 @@
-{ "hello": "Hello AHK" }
+{
+  "Hero": {
+    "title": "Welcome to AHKStrategies",
+    "subtitle": "Where Vision Meets Human Intelligence",
+    "ctaLead": "Learn More",
+    "ctaPartner": "Partner With Us"
+  },
+  "Services": {
+    "heading": "Our Core Services",
+    "items": [
+      {
+        "title": "Strategic Consulting",
+        "description": "Tailored business strategies for sustainable growth."
+      },
+      {
+        "title": "Digital Transformation",
+        "description": "AI-driven innovation connecting human and machine intelligence."
+      },
+      {
+        "title": "Partnership Development",
+        "description": "Building bridges between global visionaries and MENA opportunities."
+      }
+    ]
+  },
+  "About": {
+    "heading": "About AHKStrategies",
+    "paragraphs": [
+      "AHKStrategies drives forward-thinking leadership across industries.",
+      "We merge human insight with technological precision to build the future.",
+      "Our mission is to bridge the gap between visionary thinking and practical implementation through strategic partnerships and innovative solutions."
+    ]
+  },
+  "LeadForm": {
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Message"
+    },
+    "submit": "Submit",
+    "loading": "Sending...",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again."
+  },
+  "PartnerForm": {
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "type": "Partnership Type",
+      "typePlaceholder": "e.g., Strategic Alliance, Joint Venture",
+      "message": "Partnership Details"
+    },
+    "submit": "Submit Partnership Request",
+    "loading": "Sending...",
+    "success": "Thank you! We'll review your partnership proposal and get back to you soon.",
+    "error": "Something went wrong. Please try again."
+  }
+}
